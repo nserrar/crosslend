@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+<div>
+    <table>
+        <tr>
+            <th>Parity</th>
+            <th>Boundary Min</th>
+            <th>Boundary Max</th>
+        </tr>
+        <tr>
+            <td>{{ params.odd == 1 ? 'Odd' : 'Even' }}</td>
+            <td>{{ params.min }}</td>
+            <td>{{ params.max }}</td>
+        </tr>
+    </table>
+</div>
+
+    <a class="button" href="{{ path('cross_lend_bid_system_values', {odd : params.odd, min : params.min, max : params.max,
+        requestId :params.requestId}) }}">
+        Request System Values and Sum</a>
+{% endblock %}

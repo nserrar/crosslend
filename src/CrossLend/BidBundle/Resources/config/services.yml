@@ -1,0 +1,11 @@
+services:
+  cross_lend.bid.manager:
+      class: CrossLend\BidBundle\Managers\BidManager
+      arguments:
+          ['@cross_lend.bid.gateway', '@logger']
+
+  cross_lend.bid.gateway:
+     class: CrossLend\BidBundle\Gateway\CrossLendBidGateway
+     arguments:
+         ['%crosslend_authtoken%', '%crosslend_applicantname%', '@logger']
+

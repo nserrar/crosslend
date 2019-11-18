@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    {% for label, messages in app.flashes %}
+        {% for message in messages %}
+            <div class="flash-notice">
+                {{ message }}
+            </div>
+        {% endfor %}
+    {% endfor %}
+
+    <a class="button" href="{{ path('cross_lend_bid_homepage') }}">HomePage</a><br/><br/>
+    <a class="button" href="{{ path('cross_lend_bid_initiate') }}">Initiate Params</a>
+{% endblock %}

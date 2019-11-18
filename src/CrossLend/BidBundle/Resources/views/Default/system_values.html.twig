@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div>
+        <table style="width:100%;">
+            <tr>
+                <th>Parity</th>
+                <th>Boundary Min</th>
+                <th>Boundary Max</th>
+                <th>System Values</th>
+                <th>Solution</th>
+            </tr>
+            <tr>
+                <td>{{ params.odd == 1 ? 'Odd' : 'Even' }}</td>
+                <td>{{ params.min }}</td>
+                <td>{{ params.max }}</td>
+                <td>
+                    <ul>
+                    {% for value in systemValues[params.requestId] %}
+                        <li>{{ value }}</li>
+                    {% endfor %}
+                    </ul>
+                </td>
+                <td>{{ systemValues.SUM }}</td>
+            </tr>
+        </table>
+    </div>
+    <a class="button" href="{{ path('cross_lend_bid_post_solution', {odd : params.odd, min : params.min, max : params.max,
+        requestId:params.requestId, solution : systemValues.SUM}) }}">
+        Post Solution</a>
+{% endblock %}

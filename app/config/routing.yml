@@ -1,0 +1,3 @@
+cross_lend_bid:
+    resource: "@CrossLendBidBundle/Resources/config/routing.yml"
+    prefix:   /bid

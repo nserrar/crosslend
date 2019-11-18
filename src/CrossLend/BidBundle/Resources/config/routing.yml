@@ -1,0 +1,15 @@
+cross_lend_bid_homepage:
+    path:     /
+    defaults: { _controller: CrossLendBidBundle:Bid:index }
+
+cross_lend_bid_initiate:
+    path:     /initiate
+    defaults: { _controller: CrossLendBidBundle:Bid:initiate }
+
+cross_lend_bid_system_values:
+    path:     /systemvalues/{odd}/{min}/{max}/{requestId}
+    defaults: { _controller: CrossLendBidBundle:Bid:getSystemValues }
+
+cross_lend_bid_post_solution:
+    path:     /postsolution/{odd}/{min}/{max}/{requestId}/{solution}
+    defaults: { _controller: CrossLendBidBundle:Bid:postSolution }
